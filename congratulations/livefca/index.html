@@ -1,0 +1,164 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>EAATA Brasil | Obrigado pela inscrição</title>
+    <style>
+        :root {
+            --primary:#009EE0;
+            --primary-light: #3a7bc8;
+            --secondary: #0a2e5a;
+            --light: #ffffff;
+            --gray: #f5f7fa;
+            --dark: #1a1a1a;
+        }
+        
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+        }
+        
+        body {
+            background-color: var(--gray);
+            color: var(--dark);
+            line-height: 1.6;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            max-height: 100vh;
+            text-align: center;
+        }
+        
+        .thank-you-container {
+            background-color: var(--light);
+            padding: 40px;
+            border-radius: 10px;
+            box-shadow: 0 5px 25px rgba(0,0,0,0.1);
+            max-width: 600px;
+            width: 90%;
+            margin: 20px;
+            border-top: 5px solid var(--primary);
+        }
+        
+        .logo {
+            margin-bottom: 30px;
+        }
+        
+        .logo img {
+            border-radius: 50px;
+            background-color: var(--primary);
+            max-height: 80px;
+            width: auto;
+        }
+        
+        .icon {
+            font-size: 4rem;
+            color: var(--primary);
+            margin-bottom: 20px;
+        }
+        
+        h1 {
+            color: var(--primary);
+            margin-bottom: 20px;
+            font-size: 2rem;
+        }
+        
+        p {
+            margin-bottom: 30px;
+            font-size: 1.1rem;
+            color: var(--dark);
+        }
+        .hidden{
+            display: none;
+        }
+        .highlight {
+            color: var(--primary);
+            font-weight: 600;
+        }
+        
+        .btn {
+            display: inline-block;
+            background-color: var(--primary);
+            color: var(--light);
+            padding: 12px 30px;
+            border-radius: 30px;
+            text-decoration: none;
+            font-weight: 600;
+            transition: all 0.3s ease;
+            margin-top: 20px;
+            border: 2px solid var(--primary);
+        }
+        
+        .btn:hover {
+            background-color: var(--light);
+            color: var(--primary);
+            transform: translateY(-3px);
+            box-shadow: 0 5px 15px rgba(46, 125, 50, 0.3);
+        }
+        
+        .social-links {
+            margin-top: 40px;
+            display: flex;
+            justify-content: center;
+            gap: 20px;
+        }
+        
+        .social-link {
+            color: var(--primary);
+            font-size: 1.5rem;
+            transition: all 0.3s ease;
+        }
+        
+        .social-link:hover {
+            color: var(--primary-light);
+            transform: translateY(-3px);
+        }
+        
+        @media (max-width: 768px) {
+            .thank-you-container {
+                padding: 30px 20px;
+            }
+            
+            h1 {
+                font-size: 1.5rem;
+            }
+            
+            p {
+                font-size: 1rem;
+            }
+            
+            .icon {
+                font-size: 3rem;
+            }
+        }
+    </style>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
+    <link rel="shortcut icon" href="favicon.ico" type="image/x-icon">
+</head>
+
+<body>
+    <div class="thank-you-container">
+        <a href="https://br.eaata.pro">
+            <div class="logo">
+                <!-- Substitua pelo logo da EAATA Brasil -->
+                <img src="./Logo_EAATA_Brasil_Blanco_Bandera.webp" alt="EAATA Brasil">
+            </div>
+        </a>
+        
+        <h1>INSCRIÇÃO CONFIRMADA!</h1>
+        
+        <p>Obrigado por se inscrever na nossa live. Sua inscrição foi recebida com sucesso e já estamos preparando tudo para sua experiência incrível.</p>
+        
+        <p class="hidden">Em breve você receberá um e-mail com todos os detalhes e informações importantes. Fique atento à sua caixa de entrada!</p>
+        
+        <p class="highlight">Equipe EAATA Brasil</p>
+        
+        <a href="https://br.eaata.pro" class="btn">
+            <i class="fas fa-arrow-left" style="margin-right: 10px;"></i> VOLTAR AO SITE
+        </a>
+    </div>
+</body>
+</html>

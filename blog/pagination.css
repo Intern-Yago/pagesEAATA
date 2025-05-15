@@ -1,0 +1,177 @@
+:root {
+  --primary: #0056b3;
+  --primary-light: #3a7bc8;
+  --primary-dark: #003d82;
+  --secondary: #0a2e5a;
+  --light: #ffffff;
+  --gray: #f5f7fa;
+  --text: #333333;
+}
+
+#paginate {
+  font-family: 'Segoe UI', Arial, sans-serif;
+  max-width: 100%;
+  padding: 20px;
+  background-color: var(--light);
+  border-radius: 8px;
+  box-shadow: 0 2px 10px rgba(0, 0, 0, 0.05);
+}
+
+/* Estilo da Lista */
+#paginate .list {
+  margin-bottom: 30px;
+}
+
+#paginate .item {
+  padding: 15px 20px;
+  margin-bottom: 10px;
+  background-color: var(--gray);
+  border-radius: 6px;
+  color: var(--text);
+  transition: all 0.2s ease;
+  border-left: 3px solid transparent;
+}
+
+#paginate .item:hover {
+  background-color: rgba(0, 86, 179, 0.05);
+  border-left-color: var(--primary);
+  transform: translateX(3px);
+}
+
+/* Controles de Paginação */
+#paginate .controls {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  gap: 5px;
+  flex-wrap: wrap;
+}
+
+#paginate .controls > div {
+  min-width: 36px;
+  height: 36px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 0 10px;
+  border-radius: 6px;
+  cursor: pointer;
+  font-weight: 500;
+  transition: all 0.2s ease;
+}
+#paginate .controls {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  gap: 8px;
+  margin-top: 2rem;
+}
+
+#paginate .controls > div {
+    gap: 5px;
+  min-width: 40px;
+  height: 40px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  border-radius: 8px;
+  cursor: pointer;
+  font-weight: 600;
+  transition: all 0.3s cubic-bezier(0.25, 0.8, 0.25, 1);
+  box-shadow: 0 1px 3px rgba(0, 0, 0, 0.1);
+  position: relative;
+  overflow: hidden;
+}
+
+/* Botões de Navegação (Setas) */
+#paginate .first,
+#paginate .prev,
+#paginate .next,
+#paginate .last {
+  background: var(--light);
+  color: var(--primary);
+  border: 2px solid var(--primary-light);
+  transition: all 0.3s ease;
+}
+
+#paginate .first:hover,
+#paginate .prev:hover,
+#paginate .next:hover,
+#paginate .last:hover {
+  background: var(--primary-light);
+  color: var(--light);
+  transform: translateY(-2px);
+  box-shadow: 0 4px 8px rgba(0, 86, 179, 0.2);
+}
+
+#paginate .first:active,
+#paginate .prev:active,
+#paginate .next:active,
+#paginate .last:active {
+  transform: translateY(0);
+  box-shadow: 0 2px 4px rgba(0, 86, 179, 0.2);
+}
+
+/* Números de Página */
+#paginate .numbers div {
+  background: var(--light);
+  color: var(--text);
+  border: 2px solid #e0e0e0;
+  transition: all 0.3s ease;
+  width: 20px;
+text-align: center;
+}
+
+#paginate .numbers div:hover {
+  border-color: var(--primary-light);
+  transform: translateY(-2px);
+  box-shadow: 0 4px 8px rgba(0, 86, 179, 0.1);
+}
+
+/* Página Ativa - Estilo Premium */
+#paginate .numbers div.active {
+  background: linear-gradient(135deg, var(--primary), var(--primary-dark));
+  color: var(--light);
+  border: none;
+  transform: scale(1.05);
+  box-shadow: 0 4px 12px rgba(0, 86, 179, 0.3);
+  position: relative;
+  z-index: 1;
+}
+
+#paginate .numbers div.active::after {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background: linear-gradient(135deg, 
+              rgba(255,255,255,0.2) 0%, 
+              rgba(255,255,255,0) 50%);
+  border-radius: 6px;
+  z-index: -1;
+}
+
+/* Efeito de Pressão nos Botões */
+#paginate .controls > div:active {
+  transform: scale(0.98);
+}
+
+
+/* Responsividade */
+@media (max-width: 600px) {
+  #paginate {
+    padding: 15px;
+  }
+  
+  #paginate .item {
+    padding: 12px 15px;
+  }
+  
+  #paginate .controls > div {
+    min-width: 36px;
+    height: 36px;
+    font-size: 0.9rem;
+  }
+}

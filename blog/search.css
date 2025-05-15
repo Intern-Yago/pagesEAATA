@@ -1,0 +1,66 @@
+:root {
+  --primary: #0056b3;
+  --primary-light: #3a7bc8;
+  --secondary: #0a2e5a;
+  --dark: #1a1a1a;
+  --light: #ffffff;
+  --gray: #f5f7fa;
+  --text: #333333;
+  --text-light: #6b7280;
+}
+
+.search-container {
+  position: relative;
+  max-width: 500px;
+  margin: 20px 0;
+}
+
+.search-input {
+  width: 100%;
+  padding: 12px 20px 12px 45px;
+  font-size: 16px;
+  border: 2px solid #e0e0e0;
+  border-radius: 30px;
+  background-color: var(--light);
+  color: var(--text);
+  transition: all 0.3s ease;
+  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.05);
+}
+
+.search-input:focus {
+  outline: none;
+  border-color: var(--primary-light);
+  box-shadow: 0 2px 12px rgba(0, 86, 179, 0.15);
+}
+
+.search-input::placeholder {
+  color: var(--text-light);
+  opacity: 0.8;
+}
+
+.search-icon {
+  position: absolute;
+  left: 15px;
+  top: 50%;
+  transform: translateY(-50%);
+  color: var(--text-light);
+  font-size: 18px;
+}
+
+/* Efeito hover opcional */
+.search-input:hover {
+  border-color: var(--primary);
+}
+
+/* Versão alternativa com ícone SVG */
+/*
+.search-icon {
+  position: absolute;
+  left: 15px;
+  top: 50%;
+  transform: translateY(-50%);
+  width: 20px;
+  height: 20px;
+  fill: var(--text-light);
+}
+*/

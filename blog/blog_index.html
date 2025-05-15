@@ -1,0 +1,108 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Blog Automotivo</title>
+  <link rel="stylesheet" href="styles.css">
+  <link rel="stylesheet" href="search.css">
+  <link rel="stylesheet" href="topicos.css">
+  <link rel="stylesheet" href="formsub.css">
+  <link rel="stylesheet" href="pagination.css">
+  <link rel="stylesheet" href="slide.css">
+</head>
+<body>
+  <div class="container">
+    <div class="main">
+        <!-- SLIDER NO TOPO -->
+        <section class="hero-slider">
+            <div class="slides">
+                <div class="slide" style="background-image: url('https://via.placeholder.com/800x450?text=Carregadores+Elétricos');">
+                    <div class="overlay">
+                        <span class="category">Elétrico e Híbridos</span>
+                            <h2>Como atrair mais clientes para seu negócio com carregadores de carros elétricos</h2>
+                        <span class="author">By: Danilo da Tecnomotor</span>
+                    </div>
+                </div>
+                <div class="slide" style="background-image: url('https://via.placeholder.com/800x450?text=Pergunta+Elétrica');">
+                    <div class="overlay">
+                        <span class="category">Elétrico e Híbridos</span>
+                            <h2>Posso carregar meu carro elétrico em um carregador de outra marca?</h2>
+                        <span class="author">By: Danilo da Tecnomotor</span>
+                    </div>
+                </div>
+                <div class="slide" style="background-image: url('https://via.placeholder.com/800x450?text=Atualização+TNOX');">
+                    <div class="overlay">
+                        <span class="category">Produtos</span>
+                            <h2>Novas aplicações para o TNOX: atualização gratuita para clientes do Pack1</h2>
+                        <span class="author">By: Danilo da Tecnomotor</span>
+                    </div>
+                </div>
+            </div>
+            <button class="prev">&#10094;</button>
+            <button class="next">&#10095;</button>
+        </section>
+    
+        <section id="paginate">
+            <div class="list">
+                <div class="item"> item 1</div>
+                <div class="item"> item 2</div>
+                <div class="item"> item 3</div>
+            </div>
+            <div class="controls">
+                <div class="first">&#171;</div>
+                <div class="prev">&lt;</div>
+                <div class="numbers">
+                    <div>1</div>
+                </div>
+                <div class="next">&gt;</div>
+                <div class="last">&#187;</div>
+            </div>
+        </section>
+    </div>
+    <!-- SIDEBAR -->
+    <aside class="sidebar">
+        <div class="search-container">
+            <svg class="search-icon" viewBox="0 0 24 24" width="24" height="24">
+                <path d="M15.5 14h-.79l-.28-.27a6.5 6.5 0 0 0 1.48-5.34c-.47-2.78-2.79-5-5.59-5.34a6.505 6.505 0 0 0-7.27 7.27c.34 2.8 2.56 5.12 5.34 5.59a6.5 6.5 0 0 0 5.34-1.48l.27.28v.79l4.25 4.25c.41.41 1.08.41 1.49 0 .41-.41.41-1.08 0-1.49L15.5 14zm-6 0C7.01 14 5 11.99 5 9.5S7.01 5 9.5 5 14 7.01 14 9.5 11.99 14 9.5 14z"/>
+            </svg>
+            <input type="text" class="search-input" placeholder="Search here...">
+        </div>
+        <div class="topics-container">
+            <h2 class="topics-header">Our Topics</h2>
+            <ul class="topic-list">
+                <li class="topic-item">
+                <a href="#" class="topic-link">
+                    <span class="topic-name">News</span>
+                    <span class="topic-count">2</span>
+                </a>
+                </li>
+                <li class="topic-item">
+                <a href="#" class="topic-link">
+                    <span class="topic-name">Technology</span>
+                    <span class="topic-count">5</span>
+                </a>
+                </li>
+                <li class="topic-item">
+                <a href="#" class="topic-link">
+                    <span class="topic-name">Business</span>
+                    <span class="topic-count">3</span>
+                </a>
+                </li>
+            </ul>
+        </div>
+        <div class="subscribe-container">
+            <h2 class="subscribe-header">Subscribe Us</h2>
+            <p class="subscribe-description">Receba nossas atualizações por e-mail.</p>
+            <form class="subscribe-form">
+                <input type="email" class="subscribe-input" placeholder="Seu e-mail" required>
+                <button type="submit" class="subscribe-button">Inscrever-se</button>
+            </form>
+        </div>
+    </aside>
+  </div>
+
+  <script src="slider.js"></script>
+  <script src="pagination.js"></script>
+</body>
+</html>

@@ -1,0 +1,808 @@
+{% layout none %}
+
+<!doctype html>
+<html lang="pt-BR">
+  <head>
+    <!-- Google Tag Manager -->
+    <script>
+      (function(w,d,s,l,i){w[l]=w[l]||[];w[l].push({'gtm.start':
+        new Date().getTime(),event:'gtm.js'});var f=d.getElementsByTagName(s)[0],
+      j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
+      'https://www.googletagmanager.com/gtm.js?id='+i+dl;f.parentNode.insertBefore(j,f);
+      })(window,document,'script','dataLayer','GTM-5P9BBVKF');
+    </script>
+    <!-- End Google Tag Manager -->
+
+    <!-- Google Tag Manager (noscript) -->
+    <noscript
+      ><iframe
+        src="https://www.googletagmanager.com/ns.html?id=GTM-5P9BBVKF"
+        height="0"
+        width="0"
+        style="display:none;visibility:hidden"
+      ></iframe
+    ></noscript>
+    <!-- End Google Tag Manager (noscript) -->
+
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>EAATA Brasil | Live Lion Car Service</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <link rel="shortcut icon" href="{{ 'eaata-icon.webp' | asset_url }}" type="image/x-icon">
+    <style>
+      :root {
+          --primary: #0056b3;       /* Azul EAATA */
+          --primary-light: #3a7bc8;  /* Azul claro */
+          --secondary: #0a2e5a;      /* Azul marinho escuro */
+          --dark: #1a1a1a;          /* Preto técnico */
+          --light: #ffffff;         /* Branco */
+          --gray: #f5f7fa;          /* Fundo cinza claro */
+          --text: #333333;          /* Texto escuro */
+          --text-light: #6b7280;    /* Texto cinza */
+      }
+      html{
+          scroll-behavior:smooth;
+      }
+      body {
+          font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Helvetica, Arial, sans-serif;
+          background-color: var(--light);
+          color: var(--text);
+          line-height: 1.6;
+          margin: 0;
+          padding: 0;
+      }
+
+      /* Header Minimalista */
+      header {
+          background-color: #009EE0;
+          box-shadow: 0 2px 20px rgba(0, 0, 0, 0.05);
+          padding: 18px 0;
+          position: fixed;
+          width: 100%;
+          z-index: 1000;
+      }
+
+      .header-container {
+          display: flex;
+          justify-content: space-between;
+          align-items: center;
+          max-width: 1200px;
+          margin: 0 auto;
+          padding: 0 20px;
+      }
+
+      .logo {
+          height: 80px;
+          transition: transform 0.3s;
+      }
+
+      .logo:hover {
+          transform: scale(1.03);
+      }
+
+      .nav-links a {
+          color: #BFE6F7;
+          text-decoration: none;
+          margin-left: 25px;
+          font-weight: 600;
+          font-size: 0.95rem;
+          transition: color 0.3s;
+      }
+
+      .nav-links a:hover {
+          color: #fff;
+          text-decoration: underline #fff solid;
+      }
+
+      /* Hero Section Moderna */
+      .hero {
+          background: linear-gradient(135deg, #009EE0 0%, #15446D 100%);
+          padding: 180px 20px 100px;
+          text-align: center;
+          color: var(--light);
+          position: relative;
+          overflow: hidden;
+      }
+
+      .hero::after {
+          content: "";
+          position: absolute;
+          bottom: -100px;
+          left: -50px;
+          width: 300px;
+          height: 300px;
+          background: radial-gradient(circle, rgba(255,255,255,0.1) 0%, transparent 70%);
+          border-radius: 50%;
+      }
+
+      .hero::before {
+          content: "";
+          position: absolute;
+          top: -100px;
+          right: -50px;
+          width: 300px;
+          height: 300px;
+          background: radial-gradient(circle, rgba(255,255,255,0.08) 0%, transparent 70%);
+          border-radius: 50%;
+      }
+
+      h1, h2, h3 {
+          font-family: "Segoe UI", "Helvetica Neue" ,Helvetica, Arial,  sans-serif;
+          font-weight: 700;
+          color:#fff;
+      }
+
+      h1 {
+          font-size: 2.8rem;
+          margin-bottom: 15px;
+          line-height: 1.2;
+      }
+
+      .hero h2 {
+          font-size: 1.4rem;
+          font-weight: 400;
+          opacity: 0.9;
+          margin-bottom: 30px;
+      }
+
+      .date-badge {
+          display: inline-flex;
+          align-items: center;
+          background-color: rgba(255, 255, 255, 0.15);
+          backdrop-filter: blur(5px);
+          padding: 12px 25px;
+          border-radius: 50px;
+          font-size: 1.5rem;
+          margin-bottom: 40px;
+          border: 1px solid rgba(255, 255, 255, 0.2);
+      }
+
+      .date-badge i {
+          margin-right: 10px;
+      }
+
+      .cta-button {
+          display: inline-flex;
+          align-items: center;
+          background-color: #15446D;
+          color: #fff;
+          padding: 15px 35px;
+          border-radius: 8px;
+          text-decoration: none;
+          font-weight: 600;
+          font-size: 1.1rem;
+          transition: all 0.3s !important;
+          box-shadow: 0 5px 15px rgba(0, 0, 0, 0.1);
+      }
+
+      .cta-button:hover {
+          transform: translateY(-3px);
+          box-shadow: 0 8px 25px rgba(0, 0, 0, 0.15);
+          color: var(--secondary);
+      }
+
+      .cta-button i {
+          margin-left: 8px;
+          transition: transform 0.3s;
+      }
+
+      .cta-button:hover i {
+          transform: translateX(5px);
+      }
+
+      /* Container Principal */
+      .container {
+          max-width: 1200px;
+          margin: 0 auto;
+          padding: 0 20px;
+          flex-direction: column;
+          display: flex;
+          align-items: center;
+      }
+
+      /* Seção de Conteúdo */
+      .content-section {
+          padding: 100px 0;
+      }
+
+      .section-title {
+          text-align: center;
+          margin-bottom: 60px;
+          position: relative;
+      }
+
+      .section-title h2 {
+          font-size: 2.2rem;
+          color: var(--secondary);
+          display: inline-block;
+      }
+
+      .section-title h2::after {
+          content: "";
+          position: absolute;
+          bottom: -15px;
+          left: 50%;
+          transform: translateX(-50%);
+          width: 80px;
+          height: 3px;
+          background: linear-gradient(to right, var(--primary), var(--primary-light));
+      }
+
+      /* Grid de Conteúdo */
+      .content-grid {
+          display: flex;
+          align-items:center;
+          justify-content: center;
+          flex-direction: row;
+          gap: 40px;
+          align-items: center;
+          font-size:1.3rem;
+          width: 80%;
+      }
+
+      @media (max-width: 768px) {
+          .content-grid {
+              grid-template-columns: 1fr;
+          }
+      }
+
+
+        .bonus-container {
+            background: linear-gradient(to right, rgba(0, 86, 179, 0.05) 0%, rgba(255, 255, 255, 0) 100%);
+            border-left: 4px solid var(--primary);
+            border-radius: 0 8px 8px 0;
+            padding: 1.5rem;
+            margin: 2rem 0;
+            position: relative;
+            overflow: hidden;
+            transition: all 0.3s ease;
+            box-shadow: 0 2px 8px rgba(0, 0, 0, 0.05);
+        }
+
+        .bonus-container:hover {
+            transform: translateY(-2px);
+            box-shadow: 0 4px 12px rgba(0, 86, 179, 0.1);
+        }
+
+        .bonus-header {
+            display: flex;
+            align-items: center;
+            gap: 0.75rem;
+            margin-bottom: 0.75rem;
+        }
+
+        .bonus-icon {
+            font-size: 1.5rem;
+            color: var(--primary);
+            background: rgba(0, 86, 179, 0.1);
+            width: 2.5rem;
+            height: 2.5rem;
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+        }
+
+        .bonus-header h3 {
+            margin: 0;
+            font-size: 1.25rem;
+            color: var(--primary);
+            font-weight: 700;
+            letter-spacing: 0.5px;
+        }
+
+        .bonus-content {
+            color: var(--text);
+            line-height: 1.6;
+            font-size: 1rem;
+            padding-left: 0.5rem;
+        }
+
+        .bonus-content strong {
+            color: var(--secondary);
+            font-weight: 600;
+        }
+
+        /* Efeito adicional opcional - faixa brilhante */
+        .bonus-container::after {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 3px;
+            height: 100%;
+            background: linear-gradient(to bottom, 
+                        var(--primary), 
+                        var(--primary-light));
+            opacity: 0.7;
+        }
+
+      .content-grid img{
+          height: 300px;
+      }
+      .content-grid{
+          height:100%;
+      }
+      .content-grid strong{
+          color: #15446D;
+      }
+
+      #form{
+          width: 100%;
+      }
+
+      /* Seção de Benefícios */
+      .benefits-section {
+          background-color: var(--gray);
+          padding: 100px 0;
+      }
+
+      .benefits-grid {
+          display: grid;
+          grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+          gap: 30px;
+          margin-top: 50px;
+          width: 100%;
+      }
+
+      .benefit-card {
+          background: var(--light);
+          border-radius: 12px;
+          padding: 35px 30px;
+          text-align: center;
+          box-shadow: 0 5px 15px rgba(0, 0, 0, 0.03);
+          transition: all 0.4s;
+          border: 1px solid rgba(0, 0, 0, 0.03);
+      }
+
+      .benefit-card:hover {
+          transform: translateY(-10px);
+          box-shadow: 0 15px 30px rgba(0, 0, 0, 0.08);
+          border-color: rgba(58, 123, 200, 0.2);
+      }
+
+      .benefit-icon {
+          width: 70px;
+          height: 70px;
+          background: linear-gradient(135deg, rgba(0, 86, 179, 0.1) 0%, rgba(58, 123, 200, 0.1) 100%);
+          border-radius: 50%;
+          display: flex;
+          align-items: center;
+          justify-content: center;
+          margin: 0 auto 25px;
+          color: var(--primary);
+          font-size: 1.8rem;
+      }
+
+      .benefit-card h3 {
+          font-size: 1.3rem;
+          margin-bottom: 15px;
+          color: var(--secondary);
+      }
+
+      .benefit-card p {
+          color: var(--text-light);
+          font-size: 0.95rem;
+          line-height: 1.6;
+      }
+
+      /* Seção de Parceiros */
+      .partners-section {
+          padding-top: 80px;
+          text-align: center;
+      }
+
+      .partners-section h3{
+        color: var(--text);
+      }
+
+      .partners-title {
+          font-size: 1rem;
+          text-transform: uppercase;
+          letter-spacing: 2px;
+          color: var(--text-light);
+          margin-bottom: 40px;
+      }
+
+      .partners-grid {
+          display: flex;
+          flex-wrap: wrap;
+          justify-content: center;
+          align-items: center;
+          gap: 40px;
+          /* margin-top: 30px; */
+          width: 80%;
+          font-size: 1.4rem;
+      }
+
+      .partner-logo {
+          height: auto;
+          flex:1;
+          object-fit:contain;
+          aspect-ratio:0.7;
+      }
+      .partners-grid span h3{
+          text-align: start;
+      }
+      .partners-grid span{
+          flex:1;
+          text-align:start;
+          text-wrap-style:pretty;
+      }
+
+      .partner-logo:hover {
+          opacity: 1;
+          filter: grayscale(0%);
+      }
+
+      /* CTA Section */
+      .cta-section {
+          background: linear-gradient(135deg, var(--secondary) 0%, var(--primary) 100%);
+          padding: 100px 20px;
+          text-align: center;
+          color: white;
+          position: relative;
+          overflow: hidden;
+      }
+
+      .cta-section::before {
+          content: "";
+          position: absolute;
+          top: -100px;
+          right: -100px;
+          width: 300px;
+          height: 300px;
+          background: radial-gradient(circle, rgba(255,255,255,0.08) 0%, transparent 70%);
+          border-radius: 50%;
+      }
+
+      .cta-section h2 {
+          font-size: 2.3rem;
+          margin-bottom: 20px;
+      }
+
+      .cta-section p {
+          max-width: 700px;
+          margin: 0 auto 40px;
+          font-size: 1.1rem;
+          opacity: 0.9;
+      }
+
+      /* Footer */
+      footer {
+          background-color: #15446D;
+          color: white;
+          padding: 70px 0 30px;
+      }
+
+      .footer-grid {
+          display: grid;
+          grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+          gap: 40px;
+          margin-bottom: 50px;
+          width:100%;
+      }
+
+      .footer-column h3 {
+          font-size: 1.2rem;
+          margin-bottom: 0px;
+          color: white;
+          position: relative;
+          display: inline-block;
+      }
+      /*
+      .footer-column h3::after {
+          content: "";
+          position: absolute;
+          bottom: -8px;
+          left: 0;
+          width: 40px;
+          height: 2px;
+          background: var(--primary-light);
+      } */
+
+      .footer-column p, .footer-column span.contact {
+          color: rgba(255, 255, 255, 0.7);
+          font-size: 0.9rem;
+          line-height: 1.8;
+          margin-bottom: 10px;
+          display: block;
+          text-decoration: none;
+          transition: all 0.3s;
+      }
+
+      footer .links a{
+          height: 40px;
+          display: flex;
+          align-items: center;
+          color: rgba(255, 255, 255, 0.7);
+          text-decoration: none;
+      }
+
+      .social-links {
+          display: flex;
+          flex-direction: column;
+          align-items: flex-start;
+          justify-content: center;
+      }
+
+      .social-links a {
+          height: 40px;
+          display: flex;
+          align-items: center;
+          justify-content: center;
+          color: rgba(255, 255, 255, 0.7);
+          text-decoration: none;
+      }
+      footer .logo{
+          display:flex;
+          align-items:center;
+          justify-content: center;
+          height: 100%;
+      }
+      .footer-bottom {
+          text-align: center;
+          padding-top: 30px;
+          border-top: 1px solid rgba(255, 255, 255, 0.1);
+          font-size: 0.85rem;
+          color: rgba(255, 255, 255, 0.5);
+      }
+
+      /* WhatsApp Flutuante */
+      .whatsapp-float {
+          text-decoration: none;
+          position: fixed;
+          bottom: 30px;
+          right: 30px;
+          background: #25D366;
+          color: white;
+          width: 60px;
+          height: 60px;
+          border-radius: 50%;
+          display: flex;
+          align-items: center;
+          justify-content: center;
+          font-size: 1.8rem;
+          box-shadow: 0 5px 20px rgba(0, 0, 0, 0.2);
+          z-index: 100;
+          transition: all 0.3s;
+      }
+
+      .whatsapp-float:hover {
+          transform: scale(1.1) translateY(-5px);
+          box-shadow: 0 8px 25px rgba(0, 0, 0, 0.3);
+      }
+
+      /* Responsividade */
+      @media screen and (max-width:710px){
+          .content-grid{
+            flex-direction: column;
+            text-align: center;
+          }
+          .partners-section{
+            padding: 40px 0;
+          }
+          .partners-grid{
+            flex-direction: column;
+            gap: 0;
+            width: 90%;
+            font-size: 1rem;
+            margin-top: 30px;
+          }
+          .partner-logo {
+            aspect-ratio: auto;
+            height: 456px;
+            /* flex: 1; */
+            flex: none;
+            object-fit: cover;
+            margin-top: -110px;
+          }
+          .partners-grid span{
+            width: 70%;
+          }
+
+      }
+
+      @media (max-width: 768px) {
+          h1 {
+              font-size: 2.2rem;
+          }
+
+          .hero {
+              padding: 210px 20px 80px;
+          }
+
+          .header-container {
+              flex-direction: column;
+          }
+
+          .nav-links {
+              justify-content: center;
+              align-items: center;
+              display: flex
+      ;
+              margin-top: 15px;
+              flex-wrap: wrap;
+              gap: 5px;
+          }
+
+          .nav-links a {
+              margin: 0 10px;
+          }
+      }
+    </style>
+  </head>
+  <body>
+    <!-- Header -->
+    <header>
+      <div class="header-container">
+        <a href="{{ routes.root_url }}">
+          <img src="{{ 'Logo_EAATA_Brasil_Blanco_Bandera.webp' | asset_url }}" alt="EAATA Brasil" class="logo">
+        </a>
+        <div class="nav-links">
+          <a href="#about">Sobre</a>
+          <a href="#benefits">Benefícios</a>
+          <a href="#partners">Parceiro</a>
+          <a href="#form" class="cta-button" style="padding: 10px 20px; font-size: 0.9rem;">Inscreva-se</a>
+        </div>
+      </div>
+    </header>
+
+    <!-- Hero Section -->
+    <section class="hero">
+      <div class="container">
+        <h1>Solucionando problemas da linha francesa com o EAATA 360PRO</h1>
+        <!-- <h2>Live Exclusiva EAATA com as Últimas Inovações do Mercado</h2> -->
+        <div class="date-badge">
+          <i class="far fa-calendar-alt"></i>
+          29 DE MAIO | 19:30H | YOUTUBE
+        </div>
+        <a href="#form" class="cta-button"> Garanta Sua Vaga <i class="fas fa-arrow-right"></i> </a>
+      </div>
+    </section>
+
+    <!-- Sobre a Live -->
+    <section class="content-section" id="about">
+      <div class="container">
+        <div class="section-title">
+          <h2>O Que Você Vai Aprender</h2>
+        </div>
+        <div class="content-grid">
+          <!-- <img src="{{ 'Logocastrogarageservie.png' | asset_url}}" alt="Logo castro garage"> -->
+            <span>
+                <p>
+                    Nesta live, você vai acompanhar o passo a passo de como realizar a programação de módulos da linha francesa, Programação de chaves, Correção de arquivos, Substituição de BSI e Casamento de módulos franceses.
+                    <br>
+                </p>
+                <div class="bonus-container">
+                    <div class="bonus-header">
+                        <span class="bonus-icon">🎁</span>
+                        <h3>BÔNUS EXCLUSIVO</h3>
+                    </div>
+                    <div class="bonus-content">
+                        <p><strong>Substituição e programação do módulo BSI DELPHI</strong> utilizados em veículos 2023</p>
+                    </div>
+                </div>
+                <a href="#form" class="cta-button"> Garanta Sua Vaga <i class="fas fa-arrow-right"></i> </a>
+            </span>
+        </div>
+      </div>
+    </section>
+
+    <!-- Benefícios -->
+    <section class="benefits-section" id="benefits">
+      <div class="container">
+        <div class="section-title">
+          <h2>Vantagens Exclusivas</h2>
+        </div>
+        <div class="benefits-grid">
+          <div class="benefit-card">
+            <div class="benefit-icon">
+              <i class="fas fa-chart-line"></i>
+            </div>
+            <h3>Atualização Técnica</h3>
+            <p>Conteúdo alinhado com as últimas tecnologias e tendências do mercado.</p>
+          </div>
+          <div class="benefit-card">
+            <div class="benefit-icon">
+              <i class="fas fa-tools"></i>
+            </div>
+            <h3>Demonstração Prática</h3>
+            <p>Uso de equipamentos reais em situações do dia a dia das oficinas.</p>
+          </div>
+          <div class="benefit-card">
+            <div class="benefit-icon">
+              <i class="fas fa-comments"></i>
+            </div>
+            <h3>Interação ao Vivo</h3>
+            <p>Tire suas dúvidas diretamente com os instrutores durante a live.</p>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Parceiros -->
+    <section class="partners-section" id="partners">
+      <div class="container">
+        <p class="partners-title">Parceiro Oficial</p>
+        <div class="partners-grid">
+          <img src="{{ 'Live Lion Car Service.webp' | asset_url}}" alt="Elias instrutor" class="partner-logo">
+          <span>
+            <h3>Elias Kurashima</h3>
+            <p class="about">
+              Fundador da <strong>Lion Car Service</strong>, oficina especializada em veículos da linha francesa. Começou sua trajetória aos 6 anos no auto elétrica do pai e, aos 14, já atuava em oficinas focadas em <strong>Peugeot e Citroën</strong>.
+            </p>
+            <p class="about">
+              Aos 17 anos, ingressou nas redes de concessionárias dessas marcas, onde trabalhou até os 24 anos. Nesse mesmo ano, fundou sua própria empresa, onde atua até hoje desenvolvendo soluções avançadas de <strong>programação e diagnóstico para veículos franceses</strong>.
+            </p>
+          </span>
+        </div>
+      </div>
+    </section>
+
+    <!-- CTA Final -->
+    <section class="cta-section">
+      <div class="container">
+        <h2>Pronto para Alavancar sua Carreira?</h2>
+        <p>Não perca esta oportunidade de se destacar no mercado automotivo com o conhecimento da EAATA.</p>
+        <div id="form">
+          <script>
+            !function(a,m,o,c,r,m){a[o+c]=a[o+c]||{setMeta:function(p){this.params=(this.params||[]).concat([p])}},a[o+r]=a[o+r]||function(f){a[o+r].f=(a[o+r].f||[]).concat([f])},a[o+r]({id:"1458280",hash:"520d66943057b1a4cadfd3638d549b94",locale:"pt"}),a[o+m]=a[o+m]||function(f,k){a[o+m].f=(a[o+m].f||[]).concat([[f,k]])}}(window,0,"amo_forms_","params","load","loaded");
+          </script>
+          <script
+            id="amoforms_script_1458280"
+            async="async"
+            charset="utf-8"
+            src="https://forms.kommo.com/forms/assets/js/amoforms.js?1747135623"
+          ></script>
+        </div>
+      </div>
+    </section>
+
+    <!-- Footer -->
+    <footer>
+      <div class="container">
+        <div class="footer-grid">
+          <div class="footer-column">
+            <h3>Mais Links</h3>
+            <div class="links">
+              <a href="https://br.eaata.pro/pages/politica-de-cookies">Política de cookies</a>
+              <a href="https://br.eaata.pro/pages/politica-de-privacidade">Política de privacidade</a>
+              <a href="https://br.eaata.pro/pages/termos-e-condicoes">Termos e condições</a>
+            </div>
+          </div>
+          <div class="footer-column">
+            <h3>Social Media</h3>
+            <div class="social-links">
+              <a href="https://www.facebook.com/eaatabrasil/">Facebook</a>
+              <a href="https://www.linkedin.com/company/eaatabrasil/">Linkedin</a>
+              <a href="https://www.instagram.com/eaatabrasil/">Instagram</a>
+              <a href="https://www.tiktok.com/@eaatabrasil">Tik Tok</a>
+              <a href="https://www.youtube.com/channel/UC5SecuFlfGctQHZfYqncvtg">YouTube</a>
+            </div>
+          </div>
+
+          <div class="footer-column">
+            <h3>Contato</h3>
+            <p>R. Múcio Leão, 68 - Freguesia do Ó, São Paulo - SP, 02910-050</p>
+            <span href="https://wa.me/551142700614" class="contact"><strong>Telefone: (+55) 11 4270-0614</strong></span>
+            <span href="#" class="contact"><strong>Email:</strong> brasil@eaata.pro</span>
+          </div>
+          <div class="footer-column logo">
+            <a href="{{ routes.root_url }}">
+              <img src="{{ 'logotipo_eaata.webp' | asset_url }}" alt="Logo EAATA Brasil">
+            </a>
+          </div>
+        </div>
+        <div class="footer-bottom">
+          <p>© 2023 EAATA Brasil - Todos os direitos reservados</p>
+        </div>
+      </div>
+    </footer>
+
+    <!-- WhatsApp -->
+    <a href="https://wa.me/551142700614" class="whatsapp-float" target="_blank">
+      <i class="fab fa-whatsapp"></i>
+    </a>
+  </body>
+</html>

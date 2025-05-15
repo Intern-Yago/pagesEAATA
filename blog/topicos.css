@@ -1,0 +1,86 @@
+:root {
+  --primary: #0056b3;
+  --primary-light: #3a7bc8;
+  --secondary: #0a2e5a;
+  --dark: #1a1a1a;
+  --light: #ffffff;
+  --gray: #f5f7fa;
+  --text: #333333;
+  --text-light: #6b7280;
+}
+
+.topics-container {
+  font-family: 'Segoe UI', Arial, sans-serif;
+  max-width: 300px;
+  margin: 20px 0;
+  padding: 20px;
+  background-color: var(--light);
+  border-radius: 10px;
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.08);
+}
+
+.topics-header {
+  color: var(--secondary);
+  font-size: 1.5rem;
+  margin-bottom: 20px;
+  font-weight: 600;
+}
+
+.topic-list {
+  list-style: none;
+  padding: 0;
+  margin: 0;
+}
+
+.topic-item {
+  margin-bottom: 12px;
+}
+
+.topic-link {
+  display: flex;
+  align-items: center;
+  text-decoration: none;
+  color: var(--text);
+  padding: 8px 12px;
+  border-radius: 6px;
+  transition: all 0.2s ease;
+}
+
+.topic-link:hover {
+  background-color: var(--gray);
+  color: var(--primary);
+}
+
+.topic-link::before {
+  content: "→";
+  color: var(--primary-light);
+  margin-right: 12px;
+  font-size: 1.1rem;
+  transition: all 0.2s ease;
+}
+
+.topic-link:hover::before {
+  color: var(--primary);
+  transform: translateX(3px);
+}
+
+.topic-name {
+  flex: 1;
+  font-size: 1rem;
+}
+
+.topic-count {
+  background-color: var(--primary-light);
+  color: white;
+  padding: 2px 8px;
+  border-radius: 10px;
+  font-size: 0.8rem;
+  margin-left: 8px;
+}
+
+/* Responsividade */
+@media (max-width: 768px) {
+  .topics-container {
+    max-width: 100%;
+  }
+}
